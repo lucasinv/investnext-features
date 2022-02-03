@@ -1,3 +1,13 @@
+@media only screen and (max-width: 991px) {
+
+  table.mobile-tg{
+    display:block;
+  }
+  
+table.tg{
+  display:none;
+  }
+  
 .container {
   display: flex;
   flex-direction: column;
@@ -158,4 +168,5 @@ i.fas.fa-chevron-down:nth-child(2) {
 
 i.fas.fa-chevron-down {
   padding: 0px 5px 0px 5px;
+}
 }
