@@ -7,11 +7,27 @@
         <script src="https://use.fontawesome.com/bf20a669cb.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
           crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
       
         <script type="application/javascript">
           setTimeout(function () {
-            $('[data-toggle="toggle"]').change(function () {
+            $('.tg [data-toggle="toggle"]').change(function () {
               $(this).parents().next('tbody').toggle();
+              $(this).prev('label').children('i').toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
+            });
+          }, 3000);
+
+          setTimeout(function () {
+            $('.mobile-tg thead th[data-toggle="toggle"]').click(function () {
+              $(this).parents('thead').next('tbody').toggle();
+              $(this).children('i').toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
+            });
+          }, 3000);
+
+          setTimeout(function () {
+            $('.mobile-tg .header-col-2[data-toggle="toggle"], .mobile-tg .header-col-4[data-toggle="toggle"]').click(function () {
+              $(this).parents('tbody').next('tbody').toggle();
+              $(this).children('i').toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
             });
           }, 3000);
         </script>
@@ -39,6 +55,13 @@
             .label{display:inline-flex}
         </style>
         <style type="text/css">
+            i.fa.fa-chevron-up, i.fa.fa-chevron-down {
+                margin-left: 10px;
+            }
+
+            i.fas.fa-check-circle {
+                margin-right: 10px;
+            }
             @media only screen and (min-width: 992px) {
                 /* Desktop */
                 table.mobile-tg {
@@ -157,6 +180,7 @@
                     line-height: 18px;
                     text-align: left;
                     vertical-align: top;
+                    margin-left: 10px;
                 }
 
                 .mobile-tg .inner-section-odd {
@@ -218,14 +242,14 @@
             </thead>
             
             <tbody>
-            <tbody class="labels">
-            <tr>
-                <td colspan="5">
-                <label for="Fundraising Automation">Fundraising Automation<i class="fas fa-chevron-down"></i></label>
-                <input type="checkbox" name="Fundraising Automation" id="Fundraising Automation" data-toggle="toggle">
-                </td>
-            </tr>
-            </tbody>
+                <tbody class="labels">
+                    <tr>
+                        <td colspan="5">
+                        <label for="Fundraising Automation">Fundraising Automation<i class="fa fa-chevron-down"></i></label>
+                        <input type="checkbox" name="Fundraising Automation" id="Fundraising Automation" data-toggle="toggle">
+                        </td>
+                    </tr>
+                </tbody>
             <tbody class="hide">
             <tr class="inner-section-odd">
                 <td class="feature">Soft commitments</td>
@@ -281,7 +305,7 @@
             <tbody class="labels">
             <tr>
                 <td colspan="5">
-                <label for="Marketing">Marketing<i class="fas fa-chevron-down"></i></label>
+                <label for="Marketing">Marketing<i class="fa fa-chevron-up"></i></label>
                 <input type="checkbox" name="Marketing" id="Marketing" data-toggle="toggle">
                 </td>
             </tr>
@@ -335,7 +359,7 @@
             <tbody class="labels">
                 <tr>
                 <td colspan="5">
-                    <label for="CRM">CRM<i class="fas fa-chevron-down"></i></label>
+                    <label for="CRM">CRM<i class="fa fa-chevron-up"></i></label>
                     <input type="checkbox" name="CRM" id="CRM" data-toggle="toggle">
                 </td>
                 </tr>
@@ -401,7 +425,7 @@
             <tbody class="labels">
                 <tr>
                 <td colspan="5">
-                    <label for="Automated Back Office">Automated Back Office<i class="fas fa-chevron-down"></i></label>
+                    <label for="Automated Back Office">Automated Back Office<i class="fa fa-chevron-up"></i></label>
                     <input type="checkbox" name="Automated Back Office" id="Automated Back Office" data-toggle="toggle">
                 </td>
                 </tr>
@@ -473,7 +497,7 @@
             <tbody class="labels">
                 <tr>
                 <td colspan="5">
-                    <label for="Investor Portal">Investor Portal<i class="fas fa-chevron-down"></i></label>
+                    <label for="Investor Portal">Investor Portal<i class="fa fa-chevron-up"></i></label>
                     <input type="checkbox" name="Investor Portal" id="Investor Portal" data-toggle="toggle">
                 </td>
                 </tr>
@@ -533,7 +557,7 @@
             <tbody class="labels">
                 <tr>
                 <td colspan="5">
-                    <label for="Security &amp; Compliance">Security &amp; Compliance<i class="fas fa-chevron-down"></i></label>
+                    <label for="Security &amp; Compliance">Security &amp; Compliance<i class="fa fa-chevron-down"></i></label>
                     <input type="checkbox" name="Security &amp; Compliance" id="Security &amp; Compliance" data-toggle="toggle">
                 </td>
                 </tr>
@@ -580,7 +604,7 @@
             <tbody class="labels">
                 <tr>
                 <td colspan="5">
-                    <label for="Customer Success">Customer Success<i class="fas fa-chevron-down"></i></label>
+                    <label for="Customer Success">Customer Success<i class="fa fa-chevron-down"></i></label>
                     <input type="checkbox" name="Customer Success" id="Customer Success" data-toggle="toggle">
                 </td>
                 </tr>
@@ -614,1064 +638,1062 @@
                         <th class="header-col-1">Features</th>
                     </tr>
                     <tr>
-                        <th class="header-col-3">
-                            <input type="checkbox" name="all-in-one" id="all-in-one" data-toggle="toggle">
-                            All-in-one Suite
+                        <th class="header-col-3" data-toggle="toggle">
+                            <input type="checkbox" name="all-in-one" id="all-in-one">
+                            All-in-one Suite<i class="fa fa-chevron-up"></i>
                         </th>
                     </tr>
-                <tbody class="hide">
-                    <tr class="inner-section-odd">
-                        <td class="feature">Soft commitments</td>
-        
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Guided subscriptions</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Fully integrated e-signatures</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Track investor accreditation status</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Collect funds from investors automatically</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Track investor funding status</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Investing entity tracking</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Co-sponsor management</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <!-- ------ -->
-                    <tr class="inner-section-odd">
-                        <td class="feature">Customizable offerings pages</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Shareable offerings</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Embedded offerings</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Content publisher</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Portfolio track record</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">List segmentation</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Lead capture forms</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <!-- ------ -->
-                    <tr class="inner-section-even">
-                        <td class="feature">Lead management</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Opportunity management</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Customizable fundraising pipeline</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Contact management</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Task management, activity feed</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Universal email integration</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Mass email</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Email tracking &amp; notifications</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Custom fields</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <!-- -------- -->
-                    <tr class="inner-section-odd">
-                        <td class="feature">Investor entity &amp; account management</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">SPVs, funds, &amp; other alternative investment structures</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Cap table &amp; equity management</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Loan/debt management</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Document management</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Firm-branded reports</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Waterfall modeling &amp; automation</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Automated distributions &amp; payments</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Multiple currencies</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Open-end funds and REITs</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <!-- --------- -->
-                    <tr class="inner-section-odd">
-                        <td class="feature">Document-sharing</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Investor updates publishing</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Live investment KPIs</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Transaction history</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Detailed asset summaries &amp; reporting</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Automated K-1 sharing</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Investor self-service &amp; profile management</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Custom investor portal layout</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <!-- --------- -->
-                    <tr class="inner-section-odd">
-                        <td class="feature">Fine-grained user permissions</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Two-factor authentication</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">End-to-end data encryption</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Continuous penetration testing &amp; monitoring</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Detailed user-audit logs</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">PCI DSS certified</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <!-- -------- -->
-                    <tr class="inner-section-odd">
-                        <td class="feature">Email, in-app, &amp; on-demand video call support</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Continuous education</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Dedicated deployment resource</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                </tbody>
-                <!-- ----------- -->
-                <tr>
-                    <th class="header-col-2"><input type="checkbox" name="fundraising" id="fundraising"
-                            data-toggle="toggle">Fundraising Suite</th>
-                </tr>
-                <!-- ------------- -->
-                <tbody class="hide">
-                    <tr class="inner-section-odd">
-                        <td class="feature">Soft commitments</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Guided subscriptions</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Fully integrated e-signatures</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Track investor accreditation status</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Collect funds from investors automatically</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Track investor funding status</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Investing entity tracking</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Co-sponsor management</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <!-- ------ -->
-                    <tr class="inner-section-odd">
-                        <td class="feature">Customizable offerings pages</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Shareable offerings</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Embedded offerings</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Content publisher</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Portfolio track record</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">List segmentation</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Lead capture forms</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <!-- ------ -->
-                    <tr class="inner-section-even">
-                        <td class="feature">Lead management</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Opportunity management</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Customizable fundraising pipeline</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Contact management</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Task management, activity feed</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Universal email integration</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Mass email</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Email tracking &amp; notifications</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Custom fields</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <!-- -------- -->
-                    <tr class="inner-section-odd">
-                        <td class="feature">Investor entity &amp; account management</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">SPVs, funds, &amp; other alternative investment structures</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Cap table &amp; equity management</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Loan/debt management</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Document management</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Firm-branded reports</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Waterfall modeling &amp; automation</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Automated distributions &amp; payments</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Multiple currencies</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Open-end funds and REITs</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <!-- --------- -->
-                    <tr class="inner-section-odd">
-                        <td class="feature">Document-sharing</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Investor updates publishing</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Live investment KPIs</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Transaction history</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Detailed asset summaries &amp; reporting</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Automated K-1 sharing</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Investor self-service &amp; profile management</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Custom investor portal layout</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <!-- --------- -->
-                    <tr class="inner-section-odd">
-                        <td class="feature">Fine-grained user permissions</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Two-factor authentication</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">End-to-end data encryption</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Continuous penetration testing &amp; monitoring</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Detailed user-audit logs</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">PCI DSS certified</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <!-- -------- -->
-                    <tr class="inner-section-odd">
-                        <td class="feature">Email, in-app, &amp; on-demand video call support</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Continuous education</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Dedicated deployment resource</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                </tbody>
-                <!-- ------------- -->
-                <tr>
-                    <th class="header-col-4"><input type="checkbox" name="investment" id="investment"
-                            data-toggle="toggle">Investment Suite</th>
-                </tr>
-                <!-- ------------- -->
-                <tbody class="hide">
-                    <tr class="inner-section-odd">
-                        <td class="feature">Soft commitments</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Guided subscriptions</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Fully integrated e-signatures</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Track investor accreditation status</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Collect funds from investors automatically</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Track investor funding status</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Investing entity tracking</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Co-sponsor management</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <!-- ------ -->
-                    <tr class="inner-section-odd">
-                        <td class="feature">Customizable offerings pages</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Shareable offerings</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Embedded offerings</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Content publisher</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Portfolio track record</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">List segmentation</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Lead capture forms</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <!-- ------ -->
-                    <tr class="inner-section-even">
-                        <td class="feature">Lead management</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Opportunity management</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Customizable fundraising pipeline</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Contact management</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Task management, activity feed</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Universal email integration</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Mass email</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Email tracking &amp; notifications</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Custom fields</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <!-- -------- -->
-                    <tr class="inner-section-odd">
-                        <td class="feature">Investor entity &amp; account management</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">SPVs, funds, &amp; other alternative investment structures</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Cap table &amp; equity management</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Loan/debt management</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Document management</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Firm-branded reports</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Waterfall modeling &amp; automation</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Automated distributions &amp; payments</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Multiple currencies</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Open-end funds and REITs</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <!-- --------- -->
-                    <tr class="inner-section-odd">
-                        <td class="feature">Document-sharing</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Investor updates publishing</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Live investment KPIs</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Transaction history</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Detailed asset summaries &amp; reporting</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Automated K-1 sharing</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Investor self-service &amp; profile management</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Custom investor portal layout</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="far fa-circle"></i></span></td>
-        
-                    </tr>
-                    <!-- --------- -->
-                    <tr class="inner-section-odd">
-                        <td class="feature">Fine-grained user permissions</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Two-factor authentication</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">End-to-end data encryption</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Continuous penetration testing &amp; monitoring</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Detailed user-audit logs</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">PCI DSS certified</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <!-- -------- -->
-                    <tr class="inner-section-odd">
-                        <td class="feature">Email, in-app, &amp; on-demand video call support</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-even">
-                        <td class="feature">Continuous education</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                    <tr class="inner-section-odd">
-                        <td class="feature">Dedicated deployment resource</td>
-                        <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
-                                    class="fas fa-check-circle"></i></span>
-                        </td>
-        
-                    </tr>
-                </tbody>
+                    <tbody class="hide">
+                        <tr class="inner-section-odd">
+                            <td class="feature">Soft commitments</td>
+            
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Guided subscriptions</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Fully integrated e-signatures</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Track investor accreditation status</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Collect funds from investors automatically</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Track investor funding status</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Investing entity tracking</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Co-sponsor management</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <!-- ------ -->
+                        <tr class="inner-section-odd">
+                            <td class="feature">Customizable offerings pages</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Shareable offerings</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Embedded offerings</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Content publisher</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Portfolio track record</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">List segmentation</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Lead capture forms</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <!-- ------ -->
+                        <tr class="inner-section-even">
+                            <td class="feature">Lead management</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Opportunity management</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Customizable fundraising pipeline</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Contact management</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Task management, activity feed</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Universal email integration</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Mass email</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Email tracking &amp; notifications</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Custom fields</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <!-- -------- -->
+                        <tr class="inner-section-odd">
+                            <td class="feature">Investor entity &amp; account management</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">SPVs, funds, &amp; other alternative investment structures</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Cap table &amp; equity management</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Loan/debt management</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Document management</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Firm-branded reports</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Waterfall modeling &amp; automation</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Automated distributions &amp; payments</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Multiple currencies</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Open-end funds and REITs</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <!-- --------- -->
+                        <tr class="inner-section-odd">
+                            <td class="feature">Document-sharing</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Investor updates publishing</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Live investment KPIs</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Transaction history</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Detailed asset summaries &amp; reporting</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Automated K-1 sharing</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Investor self-service &amp; profile management</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Custom investor portal layout</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <!-- --------- -->
+                        <tr class="inner-section-odd">
+                            <td class="feature">Fine-grained user permissions</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Two-factor authentication</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">End-to-end data encryption</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Continuous penetration testing &amp; monitoring</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Detailed user-audit logs</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">PCI DSS certified</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <!-- -------- -->
+                        <tr class="inner-section-odd">
+                            <td class="feature">Email, in-app, &amp; on-demand video call support</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Continuous education</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Dedicated deployment resource</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                    </tbody>
+                    <!-- ----------- -->
+                    <tr>
+                        <th class="header-col-2" data-toggle="toggle"><input type="checkbox" name="fundraising" id="fundraising">Fundraising Suite<i class="fa fa-chevron-up"></i></th>
+                    </tr>
+                    <!-- ------------- -->
+                    <tbody class="hide">
+                        <tr class="inner-section-odd">
+                            <td class="feature">Soft commitments</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Guided subscriptions</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Fully integrated e-signatures</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Track investor accreditation status</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Collect funds from investors automatically</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Track investor funding status</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Investing entity tracking</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Co-sponsor management</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <!-- ------ -->
+                        <tr class="inner-section-odd">
+                            <td class="feature">Customizable offerings pages</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Shareable offerings</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Embedded offerings</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Content publisher</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Portfolio track record</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">List segmentation</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Lead capture forms</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <!-- ------ -->
+                        <tr class="inner-section-even">
+                            <td class="feature">Lead management</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Opportunity management</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Customizable fundraising pipeline</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Contact management</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Task management, activity feed</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Universal email integration</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Mass email</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Email tracking &amp; notifications</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Custom fields</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <!-- -------- -->
+                        <tr class="inner-section-odd">
+                            <td class="feature">Investor entity &amp; account management</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">SPVs, funds, &amp; other alternative investment structures</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Cap table &amp; equity management</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Loan/debt management</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Document management</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Firm-branded reports</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Waterfall modeling &amp; automation</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Automated distributions &amp; payments</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Multiple currencies</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Open-end funds and REITs</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <!-- --------- -->
+                        <tr class="inner-section-odd">
+                            <td class="feature">Document-sharing</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Investor updates publishing</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Live investment KPIs</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Transaction history</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Detailed asset summaries &amp; reporting</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Automated K-1 sharing</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Investor self-service &amp; profile management</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Custom investor portal layout</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <!-- --------- -->
+                        <tr class="inner-section-odd">
+                            <td class="feature">Fine-grained user permissions</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Two-factor authentication</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">End-to-end data encryption</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Continuous penetration testing &amp; monitoring</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Detailed user-audit logs</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">PCI DSS certified</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <!-- -------- -->
+                        <tr class="inner-section-odd">
+                            <td class="feature">Email, in-app, &amp; on-demand video call support</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Continuous education</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Dedicated deployment resource</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                    </tbody>
+                    <!-- ------------- -->
+                    <tr>
+                        <th class="header-col-4" data-toggle="toggle"><input type="checkbox" name="investment" id="investment">Investment Suite<i class="fa fa-chevron-up"></i></th>
+                    </tr>
+                    <!-- ------------- -->
+                    <tbody class="hide">
+                        <tr class="inner-section-odd">
+                            <td class="feature">Soft commitments</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Guided subscriptions</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Fully integrated e-signatures</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Track investor accreditation status</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Collect funds from investors automatically</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Track investor funding status</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Investing entity tracking</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Co-sponsor management</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <!-- ------ -->
+                        <tr class="inner-section-odd">
+                            <td class="feature">Customizable offerings pages</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Shareable offerings</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Embedded offerings</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Content publisher</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Portfolio track record</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">List segmentation</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Lead capture forms</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <!-- ------ -->
+                        <tr class="inner-section-even">
+                            <td class="feature">Lead management</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Opportunity management</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Customizable fundraising pipeline</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Contact management</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Task management, activity feed</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Universal email integration</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Mass email</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Email tracking &amp; notifications</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Custom fields</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <!-- -------- -->
+                        <tr class="inner-section-odd">
+                            <td class="feature">Investor entity &amp; account management</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">SPVs, funds, &amp; other alternative investment structures</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Cap table &amp; equity management</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Loan/debt management</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Document management</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Firm-branded reports</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Waterfall modeling &amp; automation</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Automated distributions &amp; payments</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Multiple currencies</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Open-end funds and REITs</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <!-- --------- -->
+                        <tr class="inner-section-odd">
+                            <td class="feature">Document-sharing</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Investor updates publishing</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Live investment KPIs</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Transaction history</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Detailed asset summaries &amp; reporting</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Automated K-1 sharing</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Investor self-service &amp; profile management</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Custom investor portal layout</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="far fa-circle"></i></span></td>
+            
+                        </tr>
+                        <!-- --------- -->
+                        <tr class="inner-section-odd">
+                            <td class="feature">Fine-grained user permissions</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Two-factor authentication</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">End-to-end data encryption</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Continuous penetration testing &amp; monitoring</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Detailed user-audit logs</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">PCI DSS certified</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <!-- -------- -->
+                        <tr class="inner-section-odd">
+                            <td class="feature">Email, in-app, &amp; on-demand video call support</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-even">
+                            <td class="feature">Continuous education</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                        <tr class="inner-section-odd">
+                            <td class="feature">Dedicated deployment resource</td>
+                            <td class="true-false"><span style="font-size: 18px; color:#00B01C;"><i
+                                        class="fas fa-check-circle"></i></span>
+                            </td>
+            
+                        </tr>
+                    </tbody>
                 </thead>
-            </div>
-        </table>
+            </table>
+        </div>
     </body>
 </html>
