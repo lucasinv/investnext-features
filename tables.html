@@ -29,6 +29,11 @@
               $(this).children('i').toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
             });
           }, 3000);
+
+          // Default all in one to open on mobile
+          setTimeout(function () {
+            $('.mobile-tg #all-in-one-mobile-section-id').toggle();
+          }, 3000);
         </script>
         <style type="text/css">
             .tg td:nth-child(1) {padding:18px 0px 18px 15px;}
@@ -639,10 +644,10 @@
                     <tr>
                         <th class="header-col-3" data-toggle="toggle">
                             <input type="checkbox" name="all-in-one" id="all-in-one">
-                            All-in-one Suite<i class="fa fa-chevron-up"></i>
+                            All-in-one Suite<i class="fa fa-chevron-down"></i>
                         </th>
                     </tr>
-                    <tbody class="hide">
+                    <tbody class="hide" id="all-in-one-mobile-section-id">
                         <tr class="inner-section-odd">
                             <td class="feature">Soft commitments</td>
             
